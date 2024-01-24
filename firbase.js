@@ -1,5 +1,9 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from 'firebase/auth'
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+} from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 import { getStorage } from "firebase/storage";
 
@@ -9,7 +13,8 @@ const firebaseConfig = {
   projectId: "",
   storageBucket: "",
   messagingSenderId: "",
-  appId: ""
+  appId: "",
+  measurementId: ""
 };
 
 const app = initializeApp(firebaseConfig);
@@ -17,4 +22,10 @@ const auth = getAuth()
 const db = getFirestore()
 const storage = getStorage();
 
-export {auth, db, storage}
+export {
+  auth,
+  db,
+  storage,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword
+}
